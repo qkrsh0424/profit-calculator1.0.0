@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragment/header::header"></head>
+
+<body>
+    <div th:replace="layout/nav/commonNavbar::commonNavbar"></div>
+    <div>
+        <div class="container">
+            <div class="jumbotron mt-2">
+                <div class="spinner-border" role="status" id="Progress_Loading">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <form action="marginDashboard" method="GET" id="submitBtn">
+                    <div class="row">
+                        <div class="col-12 col-md-12 col-lg-4">
+                            <div class="form-group">
+                                <label for="purchaseCost">매입가격</label>
+                                <input type="text" name="purchaseCost" class="form-control" id="purchaseCost"
+                                    th:value="0" />
+                                <small id="purchaseCost" class="form-text text-muted">단위 : (원)</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="purchaseTransCharge">매입 운송비용</label>
+                                <input type="text" name="purchaseTransCharge" class="form-control"
+                                    id="purchaseTransCharge" th:value="0" />
+                                <small id="purchaseTransCharge" class="form-text text-muted">단위 : (원)</small>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-4">
+                            <div class="form-group">
+                                <label for="sellPrice">판매 가격</label>
+                                <input type="text" name="sellPrice" class="form-control" id="sellPrice" th:value="0" />
+                                <small id="sellPrice" class="form-text text-muted">단위 : (원)</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="realSellTransUnitCharge">판매자 부담 운임비</label>
+                                <input type="text" name="realSellTransUnitCharge" class="form-control"
+                                    id="realSellTransUnitCharge" th:value="0" />
+                                <small id="realSellTransUnitCharge" class="form-text text-muted">단위 : (원)</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="sellTransUnitCharge">소비자 부담 운임비</label>
+                                <input type="text" name="sellTransUnitCharge" class="form-control"
+                                    id="sellTransUnitCharge" th:value="0" />
+                                <small id="sellTransUnitCharge" class="form-text text-muted">단위 : (원)</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="marketCommitionPercentage">오픈 마켓 수수료</label>
+                                <input 
+                                    type="text" 
+                                    name="marketCommitionPercentage" 
+                                    class="form-control"
+                                    id="marketCommitionPercentage" 
+                                    th:value="0" 
+                                    onkeydown="enterkey();"
+                                />
+                                <small id="marketCommitionPercentage" class="form-text text-muted">단위 : (%)</small>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-4">
+                            <div class="form-group">
+                                마진(세전)
+                                <h4><span id="marginVal">0</span> (원)</h4>
+                            </div>
+                            <div class="form-group">
+                                마진율(세전)
+                                <h4><span id="marginRateVal">0</span> (%)</h4>
+                            </div>
+                            <hr/>
+                            <div class="form-group">
+                                VAT(10%)
+                                <h4><span id="VAT_10">0</span> (원)</h4>
+                            </div>
+                            <hr/>
+                            <div class="form-group">
+                                최종 마진(세후)
+                                <h4><span id="marginAfterVAT_10">0</span> (원)</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary float-right" onclick="submitClick()">확인</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+
+            $('#Progress_Loading').hide(); //첫 시작시 로딩바를 숨겨준다.
+        })
+            .ajaxStart(function () {
+                $('#Progress_Loading').show(); //ajax실행시 로딩바를 보여준다.
+            })
+            .ajaxStop(function () {
+                $('#Progress_Loading').hide(); //ajax종료시 로딩바를 숨겨준다.
+            });
+    </script>
+    <script src="/js/marginCalculate.js"></script>
+    <footer th:replace="fragment/footer::footer"></footer>
+</body>
+
+</html>

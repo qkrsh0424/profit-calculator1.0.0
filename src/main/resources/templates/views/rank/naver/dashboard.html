@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragment/header::header"></head>
+
+<body>
+    <div th:replace="layout/nav/commonNavbar::commonNavbar"></div>
+    <div>
+        <div class="container">
+            <div class="jumbotron mt-2">
+                
+                <form id="searchSubmit">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="nSearchKeyword">검색 키워드</label>
+                                <input 
+                                    type="text" 
+                                    name="nSearchKeyword" 
+                                    class="form-control" 
+                                    id="nSearchKeyword"
+                                    value="" 
+                                    placeholder="검색에 사용할 키워드를 입력해주세요."
+                                    required
+                                />
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="nShopURL">스토어명</label>
+                                <input 
+                                    type="text" 
+                                    name="nShopURL" 
+                                    class="form-control"
+                                    id="nShopURL"
+                                    value=""
+                                    placeholder="스토어명을 정확히 입력해주세요."
+                                    required
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <button type="submit" class="btn btn-primary float-right" onclick="searchSubmit()">확인</button> -->
+                    <span class="text-danger">*쇼핑 광고 상품 및 특정 상품(롯데홈쇼핑 땡큐딜, 인터파크 쎈딜)등 을 제외한 랭킹을 조회합니다.</span>
+                    <button type="submit" class="btn btn-primary float-right">확인</button>
+                </form>
+            </div>
+            <hr/>
+            <div id="rankingResultBoard" style="display:none">
+
+            </div>
+            <!-- <div class="rs_itemList_Wrapper">
+                <img src="https://shopping-phinf.pstatic.net/main_2345931/23459315687.jpg"/>
+                <div class="float-left">
+                    <p class="rs_itemList_title">(내츄럴오크전용가방포함) 접이식 캠핑테이블 <b>감성캠핑</b></p>
+                    <p class="rs_itemList_storeName">원하트</p>
+                    <p class="rs_itemList_price">12000원</p>
+                    <p class="rs_itemList_category">스포츠/레저>캠핑>캠핑의자</p>
+                    <p class="rs_itemList_rank">현재 랭킹 : <span class="text-danger">12</span>위</p>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <script src="/js/rankSearch.js"></script>
+    <footer th:replace="fragment/footer::footer"></footer>
+</body>
+
+</html>
