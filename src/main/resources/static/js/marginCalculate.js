@@ -22,13 +22,13 @@ function submitClick() {
                     // realSellTransUnitCharge:document.getElementById("realSellTransUnitCharge").value,
                     // sellTransUnitCharge:document.getElementById("sellTransUnitCharge").value,
                     // marketCommitionPercentage:document.getElementById("marketCommitionPercentage").value
-                    purchaseCost: $("#purchaseCost").val() ? $("#purchaseCost").val() : 0,
-                    purchaseTransCharge: $("#purchaseTransCharge").val() ? $("#purchaseTransCharge").val() : 0,
-                    sellPrice: $("#sellPrice").val() ? $("#sellPrice").val() : 0,
-                    realSellTransUnitCharge: $("#realSellTransUnitCharge").val() ? $("#realSellTransUnitCharge").val() : 0,
-                    sellTransUnitCharge: $("#sellTransUnitCharge").val() ? $("#sellTransUnitCharge").val() : 0,
-                    marketCommitionPercentage: $("#marketCommitionPercentage").val() ? $("#marketCommitionPercentage").val() : 0,
-                    extraCharge:$("#extraCharge").val() ? $("#extraCharge").val() : 0
+                    purchaseCost: $("#purchaseCost").val() ? $("#purchaseCost").val() : "0",
+                    purchaseTransCharge: $("#purchaseTransCharge").val() ? $("#purchaseTransCharge").val() : "0",
+                    sellPrice: $("#sellPrice").val() ? $("#sellPrice").val() : "0",
+                    realSellTransUnitCharge: $("#realSellTransUnitCharge").val() ? $("#realSellTransUnitCharge").val() : "0",
+                    sellTransUnitCharge: $("#sellTransUnitCharge").val() ? $("#sellTransUnitCharge").val() : "0",
+                    marketCommitionPercentage: $("#marketCommitionPercentage").val() ? $("#marketCommitionPercentage").val() : "0",
+                    extraCharge:$("#extraCharge").val() ? $("#extraCharge").val() : "0"
                 },
                 error: function () {
                     alert("server connect failed");
