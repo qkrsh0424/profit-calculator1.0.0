@@ -19,8 +19,9 @@ public class MarginCalculateAPI {
         int realSellTransUnitCharge = Integer.parseInt(String.valueOf(param.get("realSellTransUnitCharge")));
         int sellTransUnitCharge = Integer.parseInt(String.valueOf(param.get("sellTransUnitCharge")));
         double marketCommitionPercentage = Double.parseDouble(param.get("marketCommitionPercentage"));
+        int extraCharge = Integer.parseInt(String.valueOf(param.get("extraCharge")));
 
-        DomesticMargin dm = new DomesticMargin(purchaseCost, purchaseTransCharge, sellPrice, sellTransUnitCharge, realSellTransUnitCharge, marketCommitionPercentage);
+        DomesticMargin dm = new DomesticMargin(purchaseCost, purchaseTransCharge, sellPrice, sellTransUnitCharge, realSellTransUnitCharge, marketCommitionPercentage, extraCharge);
         // System.out.println(dm.DomesticMarginReturn());
         return dm.DomesticMarginReturn();
     }

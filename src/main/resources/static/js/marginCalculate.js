@@ -22,12 +22,13 @@ function submitClick() {
                     // realSellTransUnitCharge:document.getElementById("realSellTransUnitCharge").value,
                     // sellTransUnitCharge:document.getElementById("sellTransUnitCharge").value,
                     // marketCommitionPercentage:document.getElementById("marketCommitionPercentage").value
-                    purchaseCost: $("#purchaseCost").val(),
-                    purchaseTransCharge: $("#purchaseTransCharge").val(),
-                    sellPrice: $("#sellPrice").val(),
-                    realSellTransUnitCharge: $("#realSellTransUnitCharge").val(),
-                    sellTransUnitCharge: $("#sellTransUnitCharge").val(),
-                    marketCommitionPercentage: $("#marketCommitionPercentage").val()
+                    purchaseCost: $("#purchaseCost").val() ? $("#purchaseCost").val() : 0,
+                    purchaseTransCharge: $("#purchaseTransCharge").val() ? $("#purchaseTransCharge").val() : 0,
+                    sellPrice: $("#sellPrice").val() ? $("#sellPrice").val() : 0,
+                    realSellTransUnitCharge: $("#realSellTransUnitCharge").val() ? $("#realSellTransUnitCharge").val() : 0,
+                    sellTransUnitCharge: $("#sellTransUnitCharge").val() ? $("#sellTransUnitCharge").val() : 0,
+                    marketCommitionPercentage: $("#marketCommitionPercentage").val() ? $("#marketCommitionPercentage").val() : 0,
+                    extraCharge:$("#extraCharge").val() ? $("#extraCharge").val() : 0
                 },
                 error: function () {
                     alert("server connect failed");
@@ -54,4 +55,19 @@ function enterkey() {
         // 엔터키가 눌렸을 때 실행할 내용
         submitClick();
     }
+}
+
+function calcRefresh(){
+    $("#marginVal").html(0);
+    $("#marginRateVal").html(0);
+    $("#VAT_10").html(0);
+    $("#marginAfterVAT_10").html(0);
+
+    $("#purchaseCost").val(0);
+    $("#purchaseTransCharge").val(0);
+    $("#sellPrice").val(0);
+    $("#realSellTransUnitCharge").val(0);
+    $("#sellTransUnitCharge").val(0);
+    $("#marketCommitionPercentage").val(0);
+    $("#extraCharge").val(0);
 }

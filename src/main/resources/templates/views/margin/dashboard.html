@@ -5,83 +5,228 @@
 
 <body>
     <div th:replace="layout/nav/commonNavbar::commonNavbar"></div>
-    <div>
-        <div class="container">
-            <div class="jumbotron mt-2">
-                <div class="spinner-border" role="status" id="Progress_Loading">
-                    <span class="sr-only">Loading...</span>
+    <div class="pcy-container">    
+        <div id="submitBtn" class="pcy-calc-container">
+            <div class="pcy-calc-form-Gr">
+                <div class="pcy-calc-input-Gr">
+                    <div class="pcy-calc-input-box">
+                        <div class="pcy-calc-input-label">
+                            판매가격
+                        </div>
+                        <div class="pcy-calc-input-unit-box">
+                            <span class="pcy-calc-input-unit-text">‎₩</span>
+                            <input type="text" name="sellPrice" class="pcy-calc-input-unit" id="sellPrice" th:value="0" />
+                        </div>
+                    </div>
+                    <div class="pcy-calc-input-box">
+                        <div class="pcy-calc-input-label">
+                            판매자 부담 운임비
+                        </div>
+
+                        <div class="pcy-calc-input-unit-box">
+                            <span class="pcy-calc-input-unit-text">‎₩</span>
+                            <input type="text" name="realSellTransUnitCharge" class="pcy-calc-input-unit" id="realSellTransUnitCharge" th:value="0" />
+                        </div>
+                    </div>
+                    <div class="pcy-calc-input-box">
+                        <div class="pcy-calc-input-label">
+                            소비자 부담 운임비
+                        </div>
+
+                        <div class="pcy-calc-input-unit-box">
+                            <span class="pcy-calc-input-unit-text">‎₩</span>
+                            <input type="text" name="sellTransUnitCharge" class="pcy-calc-input-unit" id="sellTransUnitCharge" th:value="0" />
+                        </div>
+                    </div>
                 </div>
-                <form action="marginDashboard" method="GET" id="submitBtn">
-                    <div class="row">
-                        <div class="col-12 col-md-12 col-lg-4">
-                            <div class="form-group">
-                                <label for="purchaseCost">매입가격</label>
-                                <input type="text" name="purchaseCost" class="form-control" id="purchaseCost"
-                                    th:value="0" />
-                                <small id="purchaseCost" class="form-text text-muted">단위 : (원)</small>
-                            </div>
-                            <div class="form-group">
-                                <label for="purchaseTransCharge">매입 운송비용</label>
-                                <input type="text" name="purchaseTransCharge" class="form-control"
-                                    id="purchaseTransCharge" th:value="0" />
-                                <small id="purchaseTransCharge" class="form-text text-muted">단위 : (원)</small>
-                            </div>
+            </div>
+            <div class="pcy-calc-form-Gr">
+                <div class="pcy-calc-input-Gr">
+                    <div class="pcy-calc-input-box">
+                        <div class="pcy-calc-input-label">
+                            매입가격
                         </div>
-                        <div class="col-12 col-md-12 col-lg-4">
-                            <div class="form-group">
-                                <label for="sellPrice">판매 가격</label>
-                                <input type="text" name="sellPrice" class="form-control" id="sellPrice" th:value="0" />
-                                <small id="sellPrice" class="form-text text-muted">단위 : (원)</small>
-                            </div>
-                            <div class="form-group">
-                                <label for="realSellTransUnitCharge">판매자 부담 운임비</label>
-                                <input type="text" name="realSellTransUnitCharge" class="form-control"
-                                    id="realSellTransUnitCharge" th:value="0" />
-                                <small id="realSellTransUnitCharge" class="form-text text-muted">단위 : (원)</small>
-                            </div>
-                            <div class="form-group">
-                                <label for="sellTransUnitCharge">소비자 부담 운임비</label>
-                                <input type="text" name="sellTransUnitCharge" class="form-control"
-                                    id="sellTransUnitCharge" th:value="0" />
-                                <small id="sellTransUnitCharge" class="form-text text-muted">단위 : (원)</small>
-                            </div>
-                            <div class="form-group">
-                                <label for="marketCommitionPercentage">오픈 마켓 수수료</label>
-                                <input 
-                                    type="text" 
-                                    name="marketCommitionPercentage" 
-                                    class="form-control"
-                                    id="marketCommitionPercentage" 
-                                    th:value="0" 
-                                    onkeydown="enterkey();"
-                                />
-                                <small id="marketCommitionPercentage" class="form-text text-muted">단위 : (%)</small>
-                            </div>
+
+                        <div class="pcy-calc-input-unit-box">
+                            <span class="pcy-calc-input-unit-text">‎₩</span>
+                            <input class="pcy-calc-input-unit" type="text" name="purchaseCost" id="purchaseCost" th:value="0"/>
                         </div>
-                        <div class="col-12 col-md-12 col-lg-4">
-                            <div class="form-group">
+                    </div>
+                    <div class="pcy-calc-input-box">
+                        <div class="pcy-calc-input-label">
+                            매입 운송비용
+                        </div>
+                        <div class="pcy-calc-input-unit-box">
+                            <span class="pcy-calc-input-unit-text">‎₩</span>
+                            <input class="pcy-calc-input-unit" type="text" name="purchaseTransCharge" id="purchaseTransCharge" th:value="0" />
+                        </div>
+                    </div>
+                    <div class="pcy-calc-input-box">
+                        <div class="pcy-calc-input-label">
+                            기타비용
+                        </div>
+                        <div class="pcy-calc-input-unit-box">
+                            <span class="pcy-calc-input-unit-text">‎₩</span>
+                            <input class="pcy-calc-input-unit" type="text" name="extraCharge" id="extraCharge" th:value="0" />
+                        </div>
+                    </div>
+                    <div class="pcy-calc-input-box">
+                        <div class="pcy-calc-input-label">
+                            오픈마켓 수수료
+                        </div>
+                        <div class="pcy-calc-input-unit-box">
+                            <span class="pcy-calc-input-unit-text">‎%</span>
+                            <input 
+                                type="text" 
+                                name="marketCommitionPercentage" 
+                                class="pcy-calc-input-unit"
+                                id="marketCommitionPercentage" 
+                                th:value="0" 
+                                onkeydown="enterkey();"
+                            />
+                        </div>
+                    </div>
+                    <button class="pcy-calc-button-send" role="calc-button-send" type="button" onclick="submitClick()">
+                        <span class="pcy-calc-button-send-span">계산하기</span>
+                        
+                        <div class="pcy-calc-button-send-icon">
+                            <i href="#" class="pcy-calc-button-send-fa pcy-calc-button-send-fa-remove">
+                                <i class="fas fa-calculator"></i>
+                            </i>
+                            <i href="#" class="pcy-calc-button-send-fa pcy-calc-button-send-fa-check">
+                                <i class="fas fa-calculator"></i>
+                            </i>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div class="pcy-calc-form-Gr pcy-calc-result-border">
+                <div class="pcy-calc-result-box">
+                    <div class="pcy-calc-result-box-header">
+                        <div class="pcy-calc-result-box-header-label">
+                            예상 최종 마진액 (세후)
+                        </div>
+                        <div class="pcy-calc-result-box-header-content">
+                            <h4><span id="marginAfterVAT_10">0</span> (원)</h4>
+                        </div>
+                    </div>
+                    <div class="pcy-calc-result-wrapper">
+                        <div class="pcy-calc-result-element">
+                            <div class="pcy-calc-result-element-label">
                                 마진(세전)
+                            </div>
+                            <div class="pcy-calc-result-content">
                                 <h4><span id="marginVal">0</span> (원)</h4>
                             </div>
-                            <div class="form-group">
-                                마진율(세전)
+                        </div>
+                        <div class="pcy-calc-result-element">
+                            <div class="pcy-calc-result-element-label">
+                                마진율 (세전)
+                            </div>
+                            <div class="pcy-calc-result-content">
                                 <h4><span id="marginRateVal">0</span> (%)</h4>
                             </div>
-                            <hr/>
-                            <div class="form-group">
+                        </div>
+                        <div class="pcy-calc-result-element">
+                            <div class="pcy-calc-result-element-label">
                                 VAT(10%)
-                                <h4><span id="VAT_10">0</span> (원)</h4>
                             </div>
-                            <hr/>
-                            <div class="form-group">
-                                최종 마진(세후)
-                                <h4><span id="marginAfterVAT_10">0</span> (원)</h4>
+                            <div class="pcy-calc-result-content">
+                                <h4><span id="VAT_10">0</span> (원)</h4>
                             </div>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-primary float-right" onclick="submitClick()">확인</button>
-                </form>
+                    <div class="pcy-calc-result-footer">
+                        <!-- <div class="pcy-calc-result-copy">
+                            <button class="pcy-calc-result-copy-btn">
+                                결과복사
+                            </button>
+                        </div> -->
+                        <div class="pcy-calc-result-refresh">
+                            <button class="pcy-calc-result-refresh-btn" onclick="calcRefresh()">
+                                초기화
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <!-- <div class="container">
+                <div class="jumbotron mt-2">
+                    <div class="spinner-border" role="status" id="Progress_Loading">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                    <form action="marginDashboard" method="GET" id="submitBtn">
+                        <div class="row">
+                            <div class="col-12 col-md-12 col-lg-4">
+                                <div class="form-group">
+                                    <label for="purchaseCost">매입가격</label>
+                                    <input type="text" name="purchaseCost" class="form-control" id="purchaseCost"
+                                        th:value="0" />
+                                    <small id="purchaseCost" class="form-text text-muted">단위 : (원)</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="purchaseTransCharge">매입 운송비용</label>
+                                    <input type="text" name="purchaseTransCharge" class="form-control"
+                                        id="purchaseTransCharge" th:value="0" />
+                                    <small id="purchaseTransCharge" class="form-text text-muted">단위 : (원)</small>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-12 col-lg-4">
+                                <div class="form-group">
+                                    <label for="sellPrice">판매 가격</label>
+                                    <input type="text" name="sellPrice" class="form-control" id="sellPrice" th:value="0" />
+                                    <small id="sellPrice" class="form-text text-muted">단위 : (원)</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="realSellTransUnitCharge">판매자 부담 운임비</label>
+                                    <input type="text" name="realSellTransUnitCharge" class="form-control"
+                                        id="realSellTransUnitCharge" th:value="0" />
+                                    <small id="realSellTransUnitCharge" class="form-text text-muted">단위 : (원)</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="sellTransUnitCharge">소비자 부담 운임비</label>
+                                    <input type="text" name="sellTransUnitCharge" class="form-control"
+                                        id="sellTransUnitCharge" th:value="0" />
+                                    <small id="sellTransUnitCharge" class="form-text text-muted">단위 : (원)</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="marketCommitionPercentage">오픈 마켓 수수료</label>
+                                    <input 
+                                        type="text" 
+                                        name="marketCommitionPercentage" 
+                                        class="form-control"
+                                        id="marketCommitionPercentage" 
+                                        th:value="0" 
+                                        onkeydown="enterkey();"
+                                    />
+                                    <small id="marketCommitionPercentage" class="form-text text-muted">단위 : (%)</small>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-12 col-lg-4">
+                                <div class="form-group">
+                                    마진(세전)
+                                    <h4><span id="marginVal">0</span> (원)</h4>
+                                </div>
+                                <div class="form-group">
+                                    마진율(세전)
+                                    <h4><span id="marginRateVal">0</span> (%)</h4>
+                                </div>
+                                <hr/>
+                                <div class="form-group">
+                                    VAT(10%)
+                                    <h4><span id="VAT_10">0</span> (원)</h4>
+                                </div>
+                                <hr/>
+                                <div class="form-group">
+                                    최종 마진(세후)
+                                    <h4><span id="marginAfterVAT_10">0</span> (원)</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary float-right" onclick="submitClick()">확인</button>
+                    </form>
+                </div>
+            </div> -->
         </div>
     </div>
     <script>
