@@ -2,6 +2,7 @@
 .pcy-nav{
   color:white;
   background: #164773;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14);;
 }
 
 .pcy-nav-toggle-btn{
@@ -20,20 +21,14 @@
   
 }
 .pcy-calc-nav-container {
-
-
-  width:100%;
-
-
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 5%;
-    background-color: #164773;
-    
   
-  }  
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 5%;
+  background-color: #164773;
+}  
 
   .pcy-calc-nav-logo{
     font-size:22px;
