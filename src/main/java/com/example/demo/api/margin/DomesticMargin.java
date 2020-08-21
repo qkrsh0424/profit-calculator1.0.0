@@ -38,7 +38,7 @@ public class DomesticMargin {
     }
 
     public double getVAT_10(){
-        return getMargin()/10;
+        return Math.round(getMargin()/11);
     }
 
     public String DomesticMarginReturn(){

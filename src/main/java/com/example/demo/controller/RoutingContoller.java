@@ -2,6 +2,8 @@ package com.example.demo.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @Controller
 public class RoutingContoller {
@@ -19,4 +21,10 @@ public class RoutingContoller {
     public String rankingNaverDashboard(){
         return "views/rank/naver/dashboard";
     }
+
+    @GetMapping(value="/calculate/vat")
+    public String vatCalcualteDashboard() {
+        return "views/calculate/vat/dashboard";
+    }
+    
 }
