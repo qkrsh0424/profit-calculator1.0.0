@@ -11,7 +11,7 @@
                 <div class="pcy-calc-input-Gr">
                     <div class="pcy-calc-input-box">
                         <div class="pcy-calc-input-label">
-                            판매가격
+                            판매가격<span class="text-success">(+)</span>
                         </div>
                         <div class="pcy-calc-input-unit-box">
                             <span class="pcy-calc-input-unit-text">‎₩</span>
@@ -20,22 +20,22 @@
                     </div>
                     <div class="pcy-calc-input-box">
                         <div class="pcy-calc-input-label">
-                            판매자 부담 운임비
-                        </div>
-
-                        <div class="pcy-calc-input-unit-box">
-                            <span class="pcy-calc-input-unit-text">‎₩</span>
-                            <input type="text" name="realSellTransUnitCharge" class="pcy-calc-input-unit" id="realSellTransUnitCharge" th:value="0" required/>
-                        </div>
-                    </div>
-                    <div class="pcy-calc-input-box">
-                        <div class="pcy-calc-input-label">
-                            소비자 부담 운임비
+                            소비자 부담 운임비<span class="text-success">(+)</span>
                         </div>
 
                         <div class="pcy-calc-input-unit-box">
                             <span class="pcy-calc-input-unit-text">‎₩</span>
                             <input type="text" name="sellTransUnitCharge" class="pcy-calc-input-unit" id="sellTransUnitCharge" th:value="0" required/>
+                        </div>
+                    </div>
+                    <div class="pcy-calc-input-box">
+                        <div class="pcy-calc-input-label">
+                            판매자 실질 부담 운임비<span class="text-danger">(-)</span>
+                        </div>
+
+                        <div class="pcy-calc-input-unit-box">
+                            <span class="pcy-calc-input-unit-text">‎₩</span>
+                            <input type="text" name="realSellTransUnitCharge" class="pcy-calc-input-unit" id="realSellTransUnitCharge" th:value="0" required/>
                         </div>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
                 <div class="pcy-calc-input-Gr pcy-clear">
                     <div class="pcy-calc-input-box">
                         <div class="pcy-calc-input-label">
-                            매입가격
+                            매입가격<span class="text-danger">(-)</span>
                         </div>
 
                         <div class="pcy-calc-input-unit-box">
@@ -54,7 +54,7 @@
                     </div>
                     <div class="pcy-calc-input-box">
                         <div class="pcy-calc-input-label">
-                            매입 운송비용
+                            매입 운송비용<span class="text-danger">(-)</span>
                         </div>
                         <div class="pcy-calc-input-unit-box">
                             <span class="pcy-calc-input-unit-text">‎₩</span>
@@ -63,7 +63,7 @@
                     </div>
                     <div class="pcy-calc-input-box">
                         <div class="pcy-calc-input-label">
-                            기타비용
+                            기타비용<span class="text-danger">(-)</span>
                         </div>
                         <div class="pcy-calc-input-unit-box">
                             <span class="pcy-calc-input-unit-text">‎₩</span>
